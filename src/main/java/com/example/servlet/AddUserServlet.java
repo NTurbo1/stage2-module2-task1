@@ -16,7 +16,7 @@ public class AddUserServlet extends HttpServlet {
     //write your code here!
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
@@ -27,6 +27,12 @@ public class AddUserServlet extends HttpServlet {
 
         req.setAttribute("user", user);
 
+        RequestDispatcher rd = req.getRequestDispatcher("/add");
+        rd.forward(req, resp);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd = req.getRequestDispatcher("/add");
         rd.forward(req, resp);
     }
