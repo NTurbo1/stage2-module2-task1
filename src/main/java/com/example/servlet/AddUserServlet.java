@@ -27,13 +27,13 @@ public class AddUserServlet extends HttpServlet {
 
         req.setAttribute("user", user);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/add");
+        RequestDispatcher rd = req.getRequestDispatcher("add.jsp");
         rd.forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/add.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("add.jsp");
         rd.forward(req, resp);
     }
 }

@@ -19,7 +19,7 @@ public class GetUsersServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("users", warehouse.getUsers());
-        RequestDispatcher rd = req.getRequestDispatcher("/users");
+        RequestDispatcher rd = req.getRequestDispatcher("users.jsp");
         rd.forward(req, resp);
     }
 }
