@@ -33,7 +33,7 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/add");
+        RequestDispatcher rd = req.getRequestDispatcher("/add.jsp");
         rd.forward(req, resp);
     }
 }
