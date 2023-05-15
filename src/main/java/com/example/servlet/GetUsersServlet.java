@@ -14,12 +14,11 @@ import java.io.IOException;
 public class GetUsersServlet extends HttpServlet {
     //write your code here!
 
-    static private final Warehouse warehouse = Warehouse.getInstance();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Warehouse warehouse = Warehouse.getInstance();
         req.setAttribute("users", warehouse.getUsers());
-        RequestDispatcher rd = req.getRequestDispatcher("users.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/users");
         rd.forward(req, resp);
     }
 }
